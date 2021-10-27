@@ -19,7 +19,7 @@ export class OfertaComponent implements OnInit {
     console.log()
     this.ofertasService.getOfertaPorId(this.route.snapshot.params['id'])
       .then((oferta: Oferta) => {
-        console.log(oferta)
+        this.oferta = oferta
       })
   }
 
