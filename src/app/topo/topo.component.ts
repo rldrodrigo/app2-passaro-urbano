@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertaService } from 'app/ofertas.service';
+import { Oferta } from 'app/shared/oferta.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-topo',
@@ -9,12 +11,19 @@ import { OfertaService } from 'app/ofertas.service';
 })
 export class TopoComponent implements OnInit {
 
+  public ofertas: Observable<Oferta[]>
+
   constructor(private ofertaService: OfertaService) { }
 
   ngOnInit() {
   }
 
   public pesquisa(termoDaBusca: string): void {
-    console.log(termoDaBusca)
+    this.ofertas = this.ofertaService.pesquisaOfertas(termoDaBusca)
+
+    this.ofertas.subscribe(
+      (ofertas: Oferta[]) => console.log(ofertas),
+
+    )
   }
 }
