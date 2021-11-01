@@ -5,6 +5,8 @@ import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/debounceTime';
 
+import { of } from 'rxjs/observable/of';
+
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
@@ -23,6 +25,10 @@ export class TopoComponent implements OnInit {
       .debounceTime(1000)//quantidade de tempo que ele aguarda para executar ejm milisegundos
       .switchMap((termo: string) => {
         console.log('requisição http para api')
+        if (termo.trim() === '') {
+          //retornar um observable de array de ofertas vazio
+          return of<Oferta[]>([])
+        }
         return this.ofertaService.pesquisaOfertas(termo)
       })
 
