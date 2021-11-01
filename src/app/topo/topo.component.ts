@@ -3,6 +3,7 @@ import { OfertaService } from 'app/ofertas.service';
 import { Oferta } from 'app/shared/oferta.model';
 import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'app-topo',
@@ -19,6 +20,7 @@ export class TopoComponent implements OnInit {
 
   ngOnInit() {
     this.ofertas = this.subjectPesquisa //retorno Oferta[]
+      .debounceTime(1000)//quantidade de tempo que ele aguarda para executar ejm milisegundos
       .switchMap((termo: string) => {
         console.log('requisição http para api')
         return this.ofertaService.pesquisaOfertas(termo)
