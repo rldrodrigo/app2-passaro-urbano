@@ -3,10 +3,7 @@ import { OfertaService } from 'app/ofertas.service';
 import { Oferta } from 'app/shared/oferta.model';
 import { Observable, Subject } from 'rxjs';
 
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged'
-import 'rxjs/add/operator/catch'
+import 'app/util/rxjs-extensions'
 
 import { of } from 'rxjs/observable/of';
 
