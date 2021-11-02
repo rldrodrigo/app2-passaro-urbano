@@ -5,7 +5,7 @@ import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged'
-
+import 'rxjs/add/operator/catch'
 import { of } from 'rxjs/observable/of';
 
 @Component({
@@ -33,10 +33,12 @@ export class TopoComponent implements OnInit {
         }
         return this.ofertaService.pesquisaOfertas(termo)
       })
+      .catch((err: any) => {
+        console.log(err)
+        return of<Oferta[]>([])
+      })
 
-    this.ofertas.subscribe((ofertas: Oferta[]) => {
-      console.log(ofertas)
-    })
+    this.ofertas.subscribe((ofertas: Oferta[]) => console.log(ofertas))
   }
 
   public pesquisa(termoDaBusca: string): void {
