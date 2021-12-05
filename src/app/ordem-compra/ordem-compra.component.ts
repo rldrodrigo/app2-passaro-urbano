@@ -58,7 +58,7 @@ export class OrdemCompraComponent implements OnInit {
   public atualizaComplemento(complemento: string): void {
     this.complemento = complemento
 
-    this.numeroEstadoPimitivo = false
+    this.complementoEstadoPimitivo = false
     //Se a String for maior que 1
     if (this.complemento.length > 1) {
       this.complementoValido = true
@@ -69,8 +69,9 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaFormaPagamento(formaPagamento: string): void {
     this.formaPagamento = formaPagamento
-    if (
-      this.formaPagamento.length > 0) {
+    this.formaPagamentoEstadoPimitivo = false
+
+    if (this.formaPagamento.length > 0) {
       this.formaPagamentoValido = true
     } else {
       this.formaPagamentoValido = false
