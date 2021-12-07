@@ -213,6 +213,13 @@
       "complemento": "Casa Branca",
       "formaPagamento": "dinheiro",
       "id": 4
+    },
+    {
+      "endereco": "Rua Vinte e 5",
+      "numero": "12",
+      "complemento": "Casa B",
+      "formaPagamento": "dinheiro",
+      "id": 5
     }
   ]
 }
