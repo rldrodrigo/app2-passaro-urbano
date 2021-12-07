@@ -220,6 +220,13 @@
       "complemento": "Casa B",
       "formaPagamento": "dinheiro",
       "id": 5
+    },
+    {
+      "endereco": "Rua a",
+      "numero": "25",
+      "complemento": "Testwe",
+      "formaPagamento": "debito",
+      "id": 6
     }
   ]
 }
