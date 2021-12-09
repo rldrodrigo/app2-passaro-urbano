@@ -18,12 +18,15 @@ export class OrdemCompraComponent implements OnInit {
     'formaPagamento': new FormControl(null)
   })
 
-  constructor(private ordemCompraService: OrdemCompraService) { }
+  constructor(private ordemCompraService: OrdemCompraService) {
+
+  }
 
   ngOnInit() {
 
   }
 
   public confirmarCompra(): void {
+    console.log(this.formulario)
   }
 }
