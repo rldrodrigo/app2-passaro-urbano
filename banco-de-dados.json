@@ -227,6 +227,27 @@
       "complemento": "Testwe",
       "formaPagamento": "debito",
       "id": 6
+    },
+    {
+      "endereco": "teste",
+      "numero": "teste",
+      "complemento": "teste",
+      "formaPagamento": "dinheiro",
+      "id": 7
+    },
+    {
+      "endereco": "teste",
+      "numero": "teste",
+      "complemento": "teste",
+      "formaPagamento": "dinheiro",
+      "id": 8
+    },
+    {
+      "endereco": "Rua a ",
+      "numero": "78",
+      "complemento": "Portão Branco",
+      "formaPagamento": "dinheiro",
+      "id": 9
     }
   ]
 }
