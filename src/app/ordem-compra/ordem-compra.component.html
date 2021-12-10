@@ -32,6 +32,13 @@
       </div>
 
 
+      <div class="form-row">
+        <div class="form-group col d-flex justify-content-end">
+          <h4>Total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency: 'BRL':true }}</h4>
+        </div>
+      </div>
+      <br />
+
 
       <h5>Dados de entrega</h5>
       <hr />
